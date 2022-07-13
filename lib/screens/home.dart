@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:yoga_app/screens/customeAppBar.dart';
+import 'package:yoga_app/Widgets/customeDrawer.dart';
+import 'package:yoga_app/Widgets/customeAppBar.dart';
+import 'package:yoga_app/screens/StartUp.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -49,7 +51,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(),
+      drawer: CustomeDrawer(),
       backgroundColor: Colors.white,
       body: NotificationListener(
         onNotification: scrollListner,
@@ -151,54 +153,62 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     )),
-                                Container(
-                                  margin: EdgeInsets.only(bottom: 10),
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        height: 130,
-                                        decoration: BoxDecoration(
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => StartUp()));
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(bottom: 10),
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          height: 130,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: NetworkImage(
+                                                    "https://thumbs.dreamstime.com/b/horizontal-banner-silhouette-girl-practicing-yoga-meadow-forrest-sun-salutation-healthy-lifestyle-trees-grass-magical-230456149.jpg"),
+                                              )),
+                                        ),
+                                        Container(
+                                          height: 130,
+                                          decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: NetworkImage(
-                                                  "https://thumbs.dreamstime.com/b/horizontal-banner-silhouette-girl-practicing-yoga-meadow-forrest-sun-salutation-healthy-lifestyle-trees-grass-magical-230456149.jpg"),
-                                            )),
-                                      ),
-                                      Container(
-                                        height: 130,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.black26,
+                                            color: Colors.black26,
+                                          ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        right: 20,
-                                        left: 10,
-                                        top: 10,
-                                        child: Text(
-                                          "Yoga For begginers",
-                                          style: TextStyle(
-                                              fontSize: 24,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold),
+                                        Positioned(
+                                          right: 20,
+                                          left: 10,
+                                          top: 10,
+                                          child: Text(
+                                            "Yoga For begginers",
+                                            style: TextStyle(
+                                                fontSize: 24,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        right: 20,
-                                        left: 14,
-                                        top: 42,
-                                        child: Text(
-                                          "Last time : 2 Feb",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                      )
-                                    ],
+                                        Positioned(
+                                          right: 20,
+                                          left: 14,
+                                          top: 42,
+                                          child: Text(
+                                            "Last time : 2 Feb",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -290,6 +300,44 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 //space------------------------
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10),
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            image: DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: NetworkImage(
+                                                  "https://thumbs.dreamstime.com/b/set-vector-silhouettes-woman-doing-yoga-exercises-set-vector-silhouettes-woman-doing-yoga-exercises-colored-icons-209923119.jpg"),
+                                            )),
+                                      ),
+                                      Container(
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.black26,
+                                        ),
+                                      ),
+                                      Positioned(
+                                        right: 20,
+                                        left: 10,
+                                        top: 10,
+                                        child: Text(
+                                          "Yoga for Shoulder and eyes",
+                                          style: TextStyle(
+                                              fontSize: 24,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 Container(
                                   margin: EdgeInsets.only(bottom: 10),
                                   child: Stack(
