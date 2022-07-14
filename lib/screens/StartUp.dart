@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:yoga_app/screens/rUready.dart';
 
 class StartUp extends StatelessWidget {
   const StartUp({Key? key}) : super(key: key);
@@ -11,7 +12,10 @@ class StartUp extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: ElevatedButton(
         autofocus: true,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => rUready()));
+        },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
           child: Text(
